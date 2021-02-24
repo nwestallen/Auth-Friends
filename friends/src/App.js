@@ -6,18 +6,18 @@ import {BrowserRouter as Router,
   } from 'react-router-dom';
 import Login from './components/Login';
 import FriendList from './components/FriendList';
+import PrivateRoute from './components/PrivateRoute';
+import FriendHeader from './components/Header';
 
 const App = () => {
   return (
     <Router>
       <div>
-        <header>
-          <h1>Friend List App</h1>
-        </header> 
+        <FriendHeader />
       </div>
       <Switch>
-        <Route path='/friends' component={FriendList} />
-        <Route path='/' component={Login} />
+        <PrivateRoute path='/friends' component={FriendList} />
+        <Route path='/login' component={Login} />
       </Switch>
     </Router>
   );
