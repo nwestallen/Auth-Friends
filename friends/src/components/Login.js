@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { useHistory } from 'react-router-dom';
 
 export default function Login() {
 
@@ -10,6 +11,8 @@ export default function Login() {
         setFormData({...formData, [name]: value});
     };
 
+    const history = useHistory();
+
     const handleSubmit = e => {
         e.preventDefault();
         setFormData({...formData, isLoading: true});
@@ -18,6 +21,7 @@ export default function Login() {
             .then(res => {
                 console.log(res);
                 localStorage.setItem('token', JSON.stringify(res.data.payload));
+                history.push('/friends')
             })
             .catch(err => console.log({ err }));
     };
