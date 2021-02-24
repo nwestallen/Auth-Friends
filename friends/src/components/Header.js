@@ -14,6 +14,7 @@ const FriendHeader = () => {
             <nav>
                 <Link to='/login'>Login</Link>
                 <Link to='/friends'>Friends</Link>
+                <Link to='/addFriend'>Add Friend</Link>
             </nav>
             <button onClick={handleLogOut}>Logout</button>
         </div>

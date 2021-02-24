@@ -8,6 +8,7 @@ import Login from './components/Login';
 import FriendList from './components/FriendList';
 import PrivateRoute from './components/PrivateRoute';
 import FriendHeader from './components/Header';
+import AddFriendForm from './components/AddFriendForm';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       </div>
       <Switch>
         <PrivateRoute path='/friends' component={FriendList} />
+        <PrivateRoute path='/addFriend' component={AddFriendForm} />
         <Route path='/login' component={Login} />
       </Switch>
     </Router>
